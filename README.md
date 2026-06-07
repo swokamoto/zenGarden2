@@ -1,34 +1,107 @@
-# zenGarden
+# Zen Garden
 
-This is our zen garden project for our software development bootcamp. 
+Zen Garden is a full-stack web application that allows users to create, customize, and persist virtual garden layouts.
 
-# zenGarden
+Users can register accounts, design their own garden plots by placing plants and decorative elements, and return later to continue modifying their layouts. Garden state is stored in PostgreSQL and rendered dynamically through SVG-based visualizations.
 
-ZenGarden is a project we created to display our knowledge of creating a full stack application. We were asked to create an application using MVC Architecture that would allow us to input data to a UI interface and then store that data in a database. 
-## Installation
+---
 
-Among the technologies and packages we used included:
--sequelize, node, express-handlebars, nodemon, dotenv, pg, bcrypt, express-sessions, connect- sessions-sequelize, HTML, CSS and JavaScript.
+## Features
 
-To install our program you will run npm i to install the packages and dependencies.
-To run the seed data the command npm run seed will be used.
-To run the nodemon server the command npm run watch will be used.
+- User registration and authentication
+- Persistent garden layouts tied to individual accounts
+- Add, remove, and modify garden elements
+- PostgreSQL-backed data persistence
+- Dynamic SVG-based rendering
+- Responsive web interface
 
-## Usage
+---
 
-This application will allow the user to register, login and logout to a UI that can generate a garden individual garden plot with a selection of various plants and store that data so they can retrieve their garden and add new plant data to it.
+## Tech Stack
 
-## Contributing
+### Backend
+- Node.js
+- Express
+- Sequelize ORM
+- PostgreSQL
 
-Contributors to this project include:
--1. Crystal Lisi
--2. Mike Jurek
--3 Miranda Delapaz
--4. Scott Okamoto
--5. Samuel Wlodawski
+### Frontend
+- Handlebars
+- JavaScript
+- HTML
+- CSS
 
-Please make sure to update tests as appropriate.
+### Authentication
+- bcrypt
+- express-session
+- connect-session-sequelize
 
-## License
+### Development Tools
+- Nodemon
+- dotenv
 
-We employed no license in this project.
+---
+
+## Architecture
+
+Zen Garden follows an MVC architecture where:
+
+- Models manage garden, user, and plant data
+- Controllers process user actions and application logic
+- Views render garden layouts and account pages
+
+The database serves as the source of truth for all garden state. User actions update persistent records, which are then transformed into SVG-rendered visualizations.
+
+For a deeper discussion of the application's architecture and design decisions:
+
+➡️ **[System Design Overview](https://github.com/swokamoto/system-design-notes/blob/main/zen-garden.md)**
+
+---
+
+## Running Locally
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Configure Environment Variables
+
+Create a `.env` file with the required PostgreSQL connection information.
+
+### Seed Database
+
+```bash
+npm run seed
+```
+
+### Start Development Server
+
+```bash
+npm run watch
+```
+
+---
+
+## Contributors
+
+- Scott Okamoto
+- Crystal Lisi
+- Mike Jurek
+- Miranda Delapaz
+- Samuel Wlodawski
+
+---
+
+## Project Goals
+
+This project was originally developed during a full-stack web development bootcamp as an exploration of:
+
+- Authentication and user ownership
+- Relational database design
+- State persistence
+- Server-rendered web applications
+- Dynamic visual rendering
+
+While originally built as a team project, it remains a useful example of modeling structured application state and translating that state into interactive visual output.
